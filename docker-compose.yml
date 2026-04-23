@@ -1,0 +1,54 @@
+# ============================================================
+# RAG Q&A System — Docker Compose
+# Runs backend (FastAPI) and frontend (Streamlit) as services
+# ============================================================
+
+version: "3.9"
+
+services:
+  # ── FastAPI Backend ──────────────────────────────────────
+  backend:
+    build: .
+    container_name: rag-backend
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app                    # Mount code for hot-reload
+      - faiss_data:/app/faiss_index
+      - log_data:/app/logs
+    env_file:
+      - .env
+    environment:
+      - BACKEND_URL=http://backend:8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Streamlit Frontend ────────────────────────────────────
+  frontend:
+    build: .
+    container_name: rag-frontend
+    command: streamlit run frontend/app.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      - BACKEND_URL=http://backend:8000   # Uses Docker internal network
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+# ── Volumes ───────────────────────────────────────────────
+volumes:
+  faiss_data:
+    driver: local
+  log_data:
+    driver: local
