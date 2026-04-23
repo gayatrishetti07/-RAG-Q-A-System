@@ -496,8 +496,8 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@yourusername]([https://github.com/gayatrishetti07])
-- LinkedIn: [linkedin.com/in/yourprofile](www.linkedin.com/in/gayatri-shetti-0208b4255)
+- GitHub: https://github.com/gayatrishetti07
+- LinkedIn: www.linkedin.com/in/gayatri-shetti-0208b4255
 
 ---
 
