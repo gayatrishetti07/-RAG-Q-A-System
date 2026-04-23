@@ -460,30 +460,6 @@ FAISS computes cosine similarity against all chunk embeddings:
 
 ---
 
-## 📋 Resume Bullet Points
-
-Use these on your resume / LinkedIn:
-
-```
-• Built a production-grade Retrieval-Augmented Generation (RAG) system in Python
-  using LangChain, FAISS, and OpenAI GPT, enabling semantic Q&A over PDF documents
-  with conversational memory and <3s end-to-end latency
-
-• Designed a modular RAG pipeline (load → chunk → embed → index → retrieve → generate)
-  with plug-and-play LLM and embedding providers (OpenAI / HuggingFace fallback)
-
-• Deployed a full-stack AI application with FastAPI REST backend (6 endpoints, Pydantic
-  validation, OpenAPI docs) and Streamlit chat UI, containerized with Docker
-
-• Implemented vector similarity search using FAISS with persistent disk indexing,
-  supporting incremental document additions without full re-indexing
-
-• Added multi-turn conversational memory (ConversationBufferMemory), structured logging
-  (Loguru), environment-based configuration, and robust error handling
-```
-
----
-
 ## 🛠️ Tech Stack
 
 | Layer | Technology | Purpose |
@@ -520,8 +496,8 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+- GitHub: [@yourusername]([https://github.com/gayatrishetti07])
+- LinkedIn: [linkedin.com/in/yourprofile](www.linkedin.com/in/gayatri-shetti-0208b4255)
 
 ---
 
